@@ -6,70 +6,178 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>EcoBin Finder</title>
+    <title>EcoBin Finder | E-Waste Recycling</title>
 
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- Leaflet CSS -->
     <link rel="stylesheet"
-        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
 </head>
 
 <body>
 
+<!-- ========================= -->
+<!-- HEADER -->
+<!-- ========================= -->
+
 <header>
 
     <h1>♻️ EcoBin Finder</h1>
 
-    <p>Locate nearby e-waste recycling bins across Singapore.</p>
+    <p>
+        Find nearby e-waste recycling bins across Singapore
+        and learn how to recycle electronic waste responsibly.
+    </p>
 
     <button id="locateBtn">
-        📍 Find Nearest E-Waste Bins
+
+        <i class="fa-solid fa-location-crosshairs"></i>
+
+        Find Nearby Bins
+
     </button>
 
 </header>
 
+<!-- ========================= -->
+<!-- MAIN CONTENT -->
+<!-- ========================= -->
+
 <main>
 
-    <div id="map"></div>
+    <!-- MAP -->
 
-    <div class="cards">
+    <section id="mapSection">
 
-        <div id="info" class="card">
+        <div id="map"></div>
 
-            <h2>📄 Bin Information</h2>
+    </section>
 
-            <p>Select any recycling bin on the map.</p>
+    <!-- INFO CARDS -->
+
+    <section class="cards">
+
+        <!-- Bin Information -->
+
+        <div class="card" id="info">
+
+            <h2>
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                Bin Information
+
+            </h2>
+
+            <p>
+
+                Click any recycling bin on the map to
+                view its details.
+
+            </p>
 
         </div>
 
-        <div id="nearest" class="card">
+        <!-- Nearest Bins -->
 
-            <h2>📍 Nearest Recycling Bins</h2>
+        <div class="card" id="nearest">
+
+            <h2>
+
+                <i class="fa-solid fa-map-location-dot"></i>
+
+                Nearest Recycling Bins
+
+            </h2>
 
             <ul id="nearestList">
 
-                <li>Press the button above to begin.</li>
+                <li>
+
+                    Press
+                    <strong>Find Nearby Bins</strong>
+                    to begin.
+
+                </li>
 
             </ul>
 
         </div>
 
-    </div>
+    </section>
+
+    <!-- Recycling Tips -->
+
+    <section class="card" id="tips">
+
+        <h2>
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            Quick Recycling Tips
+
+        </h2>
+
+        <ul>
+
+            <li>🔋 Remove batteries before recycling devices whenever possible.</li>
+
+            <li>💾 Back up and erase personal data from phones, laptops and tablets.</li>
+
+            <li>📱 Do not throw electronics into household rubbish bins.</li>
+
+            <li>♻️ Use official e-waste collection points across Singapore.</li>
+
+        </ul>
+
+    </section>
 
 </main>
 
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
 <footer>
 
-    <p>Data Source: Singapore Government Open Data</p>
+    <p>
+
+        EcoBin Finder © 2026
+
+        <br>
+
+        Powered by Singapore Government Open Data,
+        Leaflet Maps & Botpress AI
+
+    </p>
 
 </footer>
 
+<!-- ========================= -->
+<!-- LEAFLET -->
+<!-- ========================= -->
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- SCRIPT -->
 
 <script src="script.js"></script>
 
-<!-- Botpress code goes here later -->
+<!-- ========================= -->
+<!-- BOTPRESS -->
+<!-- Paste your Botpress code here later -->
+<!-- ========================= -->
+
+<!--
+<script src="YOUR_BOTPRESS_CODE"></script>
+-->
 
 </body>
 
