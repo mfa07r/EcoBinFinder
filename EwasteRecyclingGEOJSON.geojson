@@ -17954,3 +17954,9 @@
 		}
 	]
 }
+recyclingBins.push({
+    name: p.NAME,
+    lat: feature.geometry.coordinates[1],
+    lng: feature.geometry.coordinates[0],
+    layer: layer
+});
