@@ -1,54 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>EcoBin Finder</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Leaflet Map CSS -->
     <link rel="stylesheet"
-          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
 </head>
 
 <body>
 
 <header>
+
     <h1>♻️ EcoBin Finder</h1>
-    <p>Find nearby e-waste recycling bins across Singapore.</p>
+
+    <p>Locate nearby e-waste recycling bins across Singapore.</p>
 
     <button id="locateBtn">
-        📍 Use My Location
+        📍 Find Nearest E-Waste Bins
     </button>
+
 </header>
 
 <main>
 
     <div id="map"></div>
 
-    <div id="info">
-        <h2>Bin Information</h2>
-        <p>Select a recycling bin on the map to view its details.</p>
+    <div class="cards">
+
+        <div id="info" class="card">
+
+            <h2>📄 Bin Information</h2>
+
+            <p>Select any recycling bin on the map.</p>
+
+        </div>
+
+        <div id="nearest" class="card">
+
+            <h2>📍 Nearest Recycling Bins</h2>
+
+            <ul id="nearestList">
+
+                <li>Press the button above to begin.</li>
+
+            </ul>
+
+        </div>
+
     </div>
 
 </main>
 
-<!-- Leaflet -->
+<footer>
+
+    <p>Data Source: Singapore Government Open Data</p>
+
+</footer>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-<!-- JavaScript -->
 <script src="script.js"></script>
 
-<!-- Botpress goes here later -->
+<!-- Botpress code goes here later -->
 
 </body>
+
 </html>
-<div id="nearest">
-    <h2>Nearest Recycling Bins</h2>
-    <ul id="nearestList">
-        <li>Click "Find Nearest E-Waste Bins"</li>
-    </ul>
-</div>
