@@ -1,0 +1,46 @@
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#eef6ee;
+}
+
+header{
+    background:#2e7d32;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+button{
+    margin-top:15px;
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    background:#4CAF50;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#388E3C;
+}
+
+main{
+    width:90%;
+    margin:auto;
+    padding:20px;
+}
+
+#map{
+    height:500px;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+
+#info{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
