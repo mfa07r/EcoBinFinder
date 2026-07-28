@@ -266,7 +266,29 @@ function showLocation(position) {
             </a>
 
         `;
+    
 
     }
 
 }
+document.querySelectorAll(".quickBtn").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const question = button.dataset.question;
+
+        // Open chatbot
+        if (window.botpress) {
+            window.botpress.open();
+
+            // Wait a short moment for chat to open
+            setTimeout(() => {
+
+                window.botpress.sendMessage(question);
+
+            }, 500);
+        }
+
+    });
+
+});
