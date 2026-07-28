@@ -1,51 +1,99 @@
 // Create the map centred on Singapore
 const map = L.map('map').setView([1.3521, 103.8198], 11);
 
-// Load OpenStreetMap
+// OpenStreetMap
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
 let userMarker;
 
-// Get the button
+// ---------------------
+// GPS BUTTON
+// ---------------------
+
 const locateBtn = document.getElementById("locateBtn");
 
-// When button is clicked
 locateBtn.addEventListener("click", () => {
 
     if (!navigator.geolocation) {
-        alert("Geolocation is not supported by your browser.");
+        alert("Geolocation is not supported.");
         return;
     }
 
-    navigator.geolocation.getCurrentPosition(success, error);
+    navigator.geolocation.getCurrentPosition(showLocation);
 
 });
 
-// Success
-function success(position) {
+function showLocation(position){
 
     const lat = position.coords.latitude;
     const lng = position.coords.longitude;
 
-    // Move the map
-    map.setView([lat, lng], 16);
+    map.setView([lat,lng],15);
 
-    // Remove old marker
-    if (userMarker) {
+    if(userMarker){
         map.removeLayer(userMarker);
     }
 
-    // Add marker
-    userMarker = L.marker([lat, lng])
+    userMarker = L.marker([lat,lng])
         .addTo(map)
-        .bindPopup("📍 You are here!")
+        .bindPopup("📍 You are here")
         .openPopup();
 
 }
 
-// Error
-function error() {
-    alert("Unable to get your location. Please allow location access.");
-}
+// ---------------------
+// LOAD OFFICIAL GEOJSON
+// ---------------------
+
+fetch("EwasteRecyclingGEOJSON.geojson")
+.then(response => response.json())
+.then(data => {
+
+    L.geoJSON(data, {
+
+        onEachFeature: function(feature, layer){
+
+            const p = feature.properties;
+
+            const info = `
+                <b>${p.NAME}</b><br><br>
+
+                <b>Address:</b><br>
+                ${p.ADDRESSSTREETNAME}<br><br>
+
+                <b>Description:</b><br>
+                ${p.DESCRIPTION}
+            `;
+
+            layer.bindPopup(info);
+
+            layer.on("click", () => {
+
+                document.getElementById("info").innerHTML = `
+                    <h2>${p.NAME}</h2>
+
+                    <p><strong>Address:</strong><br>
+                    ${p.ADDRESSSTREETNAME}</p>
+
+                    <p><strong>Description:</strong><br>
+                    ${p.DESCRIPTION}</p>
+
+                    <p><strong>Access:</strong><br>
+                    ${p.ACCESSRESTRICTION}</p>
+
+                    <a href="${p.HYPERLINK.split(";")[0].trim()}"
+                       target="_blank">
+                       Visit Website
+                    </a>
+
+                `;
+
+            });
+
+        }
+
+    }).addTo(map);
+
+});
