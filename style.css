@@ -1,3 +1,7 @@
+/* ===========================
+   GENERAL
+=========================== */
+
 *{
     margin:0;
     padding:0;
@@ -5,121 +9,289 @@
 }
 
 body{
+
     font-family:Arial, Helvetica, sans-serif;
-    background:#eef6ee;
+
+    background:#edf7ed;
+
     color:#333;
+
 }
 
+/* ===========================
+   HEADER
+=========================== */
+
 header{
-    background:#2E7D32;
+
+    background:linear-gradient(135deg,#2E7D32,#43A047);
+
     color:white;
+
     text-align:center;
-    padding:30px 20px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.2);
+
+    padding:35px 20px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.2);
+
 }
 
 header h1{
+
+    font-size:42px;
+
     margin-bottom:10px;
-    font-size:36px;
+
 }
 
 header p{
-    margin-bottom:20px;
+
     font-size:18px;
+
+    max-width:700px;
+
+    margin:auto;
+
+    margin-bottom:25px;
+
+    line-height:1.5;
+
 }
 
+/* ===========================
+   BUTTON
+=========================== */
+
 button{
-    background:#4CAF50;
-    color:white;
+
+    background:white;
+
+    color:#2E7D32;
+
     border:none;
-    padding:14px 26px;
-    border-radius:10px;
-    cursor:pointer;
+
+    padding:15px 30px;
+
     font-size:17px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
     transition:.3s;
+
+    font-weight:bold;
+
 }
 
 button:hover{
-    background:#388E3C;
-    transform:scale(1.05);
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+
 }
+
+/* ===========================
+   MAIN
+=========================== */
 
 main{
+
     width:92%;
-    margin:25px auto;
+
+    max-width:1400px;
+
+    margin:30px auto;
+
 }
+
+/* ===========================
+   MAP
+=========================== */
 
 #map{
-    height:550px;
-    border-radius:15px;
+
+    height:600px;
+
+    width:100%;
+
+    border-radius:18px;
+
     overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,.2);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
 }
 
+/* ===========================
+   CARDS
+=========================== */
+
 .cards{
+
     display:grid;
+
     grid-template-columns:1fr 1fr;
-    gap:20px;
+
+    gap:25px;
+
     margin-top:25px;
+
 }
 
 .card{
+
     background:white;
-    padding:20px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
 }
 
 .card h2{
-    margin-bottom:15px;
+
     color:#2E7D32;
+
+    margin-bottom:18px;
+
 }
 
+.card p{
+
+    line-height:1.7;
+
+}
+
+/* ===========================
+   NEAREST BINS
+=========================== */
+
 #nearest ul{
+
     list-style:none;
+
 }
 
 #nearest li{
-    background:#f7f7f7;
-    margin:12px 0;
-    padding:12px;
-    border-radius:10px;
+
+    background:#f5f5f5;
+
+    margin-bottom:15px;
+
+    padding:15px;
+
+    border-radius:12px;
+
     transition:.25s;
+
 }
 
 #nearest li:hover{
-    background:#e8f5e9;
+
+    background:#E8F5E9;
+
 }
 
+/* ===========================
+   LINKS
+=========================== */
+
 #info a{
+
     display:inline-block;
+
     margin-top:15px;
+
     text-decoration:none;
-    background:#2E7D32;
+
     color:white;
-    padding:10px 15px;
-    border-radius:8px;
+
+    background:#2E7D32;
+
+    padding:12px 18px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
 }
 
 #info a:hover{
+
     background:#1B5E20;
+
 }
 
-footer{
-    text-align:center;
-    padding:25px;
-    color:#666;
-    font-size:14px;
+/* ===========================
+   TIPS
+=========================== */
+
+#tips{
+
+    margin-top:25px;
+
 }
+
+#tips ul{
+
+    margin-top:15px;
+
+    padding-left:20px;
+
+}
+
+#tips li{
+
+    margin-bottom:12px;
+
+    line-height:1.6;
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    margin-top:40px;
+
+    padding:30px;
+
+    text-align:center;
+
+    background:#2E7D32;
+
+    color:white;
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
 
 @media(max-width:900px){
 
     .cards{
+
         grid-template-columns:1fr;
+
     }
 
     #map{
+
         height:450px;
+
+    }
+
+    header h1{
+
+        font-size:32px;
+
     }
 
 }
